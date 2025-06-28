@@ -1,0 +1,26 @@
+# Dependabot, reporting for duty! This ain't no joke, we locking this down.
+version: 2
+updates:
+  # Rule 1: We gotta keep them JavaScript packages FRESH!
+  - package-ecosystem: "npm" # Or "github-actions", "devcontainers" if you add those later
+    directory: "/" # This means check your whole repository for a package.json or similar
+    schedule:
+      interval: "daily" # Girl, we checkin' this every single day. No slacking!
+      time: "03:00" # Let's do it in the dead of night, 3 AM, when the hackers are sleepin'.
+      timezone: "America/Chicago" # Set this to your local timezone (e.g., America/New_York, Europe/London)
+    open-pull-requests-limit: 5 # Don't flood me with too much work, five at a time is good.
+    labels:
+      - "security"
+      - "dependencies"
+      - "automated"
+    reviewers:
+      - "gcon27" # Make sure YOU, my boss, sees these updates first!
+    commit-message:
+      prefix: "feat" # 'feat' for features, 'fix' for fixes. We makin' moves!
+      include: "scope"
+    # Additional rules for security specifically (Dependabot's got your back)
+    target-branch: "main" # We updating the main branch, ain't no side chicks here.
+    # Enable security updates - this is where I really shine!
+    # If a vulnerability is found, I'm on it like white on rice!
+    # Just make sure this is turned ON in your repository's settings under "Security" -> "Dependabot alerts"
+    # This setting is *outside* the dependabot.yml, in your GitHub Repo Settings!
